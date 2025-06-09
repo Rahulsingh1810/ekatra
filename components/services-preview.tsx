@@ -12,6 +12,7 @@ export function ServicesPreview() {
       image: "/images/interior-detailing.png",
       icon: <Car className="h-6 w-6" />,
       color: "from-rose-600 to-pink-500",
+      link: "/what-we-do#interior-detailing",
     },
     {
       title: "Detailing Services",
@@ -19,6 +20,7 @@ export function ServicesPreview() {
       image: "/images/detailing-services.png",
       icon: <Sparkles className="h-6 w-6" />,
       color: "from-red-600 to-rose-500",
+      link: "/what-we-do#detailing-services",
     },
     {
       title: "Car Wash & Care",
@@ -26,27 +28,31 @@ export function ServicesPreview() {
       image: "/images/car-wash-care.png",
       icon: <Shield className="h-6 w-6" />,
       color: "from-orange-600 to-amber-500",
+      link: "/what-we-do#car-wash-care",
     },
     {
       title: "Bike Wash & Care",
       description: "Keep your bike spotless with our professional wash services designed for motorcycles",
-      image: "/images/detailing-polishing.png",
+      image: "/images/bike-wash-and-care.png",
       icon: <Bike className="h-6 w-6" />,
       color: "from-red-700 to-red-500",
+      link: "/what-we-do#bike-wash-care",
     },
     {
       title: "Car & Bike Tyre Care",
       description: "Professional care to extend tyre life and ensure a smooth, safe ride for all vehicles",
-      image: "/images/paint-protection.png",
+      image: "/images/car-and-bike-tyre.png",
       icon: <Settings className="h-6 w-6" />,
       color: "from-rose-800 to-rose-600",
+      link: "/what-we-do#tyre-care",
     },
     {
       title: "Accessories",
       description: "Explore our range of premium car care accessories and additional services",
-      image: "/images/ceramic-coating.png",
+      image: "/images/accessories.png",
       icon: <Wrench className="h-6 w-6" />,
       color: "from-orange-700 to-orange-500",
+      link: "/what-we-do#accessories",
     },
   ]
 
@@ -88,12 +94,14 @@ export function ServicesPreview() {
                 {service.title}
               </h3>
               <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">{service.description}</p>
-              <Button
-                variant="ghost"
-                className="text-indigo-500 hover:text-amber-500 p-0 text-sm sm:text-base font-semibold group-hover:translate-x-2 transition-all duration-300"
-              >
-                Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:animate-bounce-slow" />
-              </Button>
+              <Link href={service.link}>
+                <Button
+                  variant="ghost"
+                  className="text-rose-500 hover:text-rose-400 p-0 text-sm sm:text-base font-semibold group-hover:translate-x-2 transition-all duration-300"
+                >
+                  Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:animate-bounce-slow" />
+                </Button>
+              </Link>
             </div>
           ))}
         </div>

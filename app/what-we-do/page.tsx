@@ -15,6 +15,7 @@ export default function WhatWeDoPage() {
 
   const services = [
     {
+      id: "interior-detailing",
       title: "Interior Detailing",
       description: "Deep cleaning and restoration of your car's interior with professional techniques",
       features: ["Deep vacuum cleaning", "Leather conditioning", "Dashboard restoration", "Odor elimination"],
@@ -22,6 +23,7 @@ export default function WhatWeDoPage() {
       icon: <Car className="h-8 w-8" />,
     },
     {
+      id: "detailing-services",
       title: "Detailing Services",
       description: "Comprehensive range of specialized car care and detailing services",
       features: ["Glass & windshield care", "Headlight restoration", "Deodorizer treatment", "Leather seat care"],
@@ -29,6 +31,7 @@ export default function WhatWeDoPage() {
       icon: <Sparkles className="h-8 w-8" />,
     },
     {
+      id: "car-wash-care",
       title: "Car Wash & Care",
       description: "Professional wash services to keep your car spotless and protected",
       features: ["Premium foam wash", "Pressure cleaning", "Wax application", "Protective coating"],
@@ -36,24 +39,27 @@ export default function WhatWeDoPage() {
       icon: <Shield className="h-8 w-8" />,
     },
     {
+      id: "bike-wash-care",
       title: "Bike Wash & Care",
       description: "Specialized wash services designed specifically for motorcycles and bikes",
       features: ["Engine cleaning", "Chain lubrication", "Body polishing", "Chrome restoration"],
-      image: "/images/detailing-polishing.png",
+      image: "/images/bike-wash-and-care.png",
       icon: <Bike className="h-8 w-8" />,
     },
     {
+      id: "tyre-care",
       title: "Car & Bike Tyre Care",
       description: "Professional tyre care to extend life and ensure safety",
       features: ["Tyre cleaning", "Sidewall protection", "Pressure checking", "Alignment inspection"],
-      image: "/images/paint-protection.png",
+      image: "/images/car-and-bike-tyre.png",
       icon: <Settings className="h-8 w-8" />,
     },
     {
+      id: "accessories",
       title: "Accessories",
       description: "Premium car care accessories and additional services",
       features: ["Ceramic coating", "Paint protection film", "Interior accessories", "Performance upgrades"],
-      image: "/images/ceramic-coating.png",
+      image: "/images/accessories.png",
       icon: <Wrench className="h-8 w-8" />,
     },
   ]
@@ -100,11 +106,14 @@ export default function WhatWeDoPage() {
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                id={service.id}
+                className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                } pt-16`}
               >
                 <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} animate-slide-up`}>
                   <div className="flex items-center mb-4">
-                    <div className="p-3 glass-morphism rounded-full text-indigo-500 mr-4">{service.icon}</div>
+                    <div className="p-3 glass-morphism rounded-full text-rose-500 mr-4">{service.icon}</div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-white">{service.title}</h3>
                   </div>
                   <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6">{service.description}</p>
