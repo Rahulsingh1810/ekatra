@@ -1,9 +1,22 @@
 "use client"
 
 import Image from "next/image"
-import { CheckCircle, Star, Shield, Clock, Car, Bike, Wrench, Sparkles, Settings } from "lucide-react"
+import Link from "next/link"
+import {
+  CheckCircle,
+  Star,
+  Shield,
+  Clock,
+  Car,
+  Bike,
+  Wrench,
+  Sparkles,
+  Settings,
+  Zap,
+  Palette,
+  Droplets,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Head from "next/head"
 
 export default function WhatWeDoPage() {
   const handleBookService = () => {
@@ -16,12 +29,40 @@ export default function WhatWeDoPage() {
 
   const services = [
     {
+      id: "ceramic-coating",
+      title: "Ceramic Coating",
+      description: "Advanced ceramic protection for your vehicle's paint with long-lasting shine and protection",
+      features: ["9H hardness protection", "Hydrophobic properties", "UV protection", "5-year warranty"],
+      image: "/images/ceramic-coating.png",
+      icon: <Shield className="h-8 w-8" />,
+      slug: "/what-we-do/ceramic-coating",
+    },
+    {
+      id: "paint-protection-film",
+      title: "Paint Protection Film",
+      description: "Invisible protection film that shields your car's paint from scratches and stone chips",
+      features: ["Self-healing technology", "Crystal clear finish", "10-year warranty", "Custom fit installation"],
+      image: "/images/paint-protection.png",
+      icon: <Palette className="h-8 w-8" />,
+      slug: "/what-we-do/paint-protection-film",
+    },
+    {
+      id: "detailing-polishing",
+      title: "Detailing and Polishing",
+      description: "Professional paint correction and polishing services to restore your car's original shine",
+      features: ["Paint correction", "Swirl mark removal", "High-gloss finish", "Professional grade products"],
+      image: "/images/detailing-polishing.png",
+      icon: <Sparkles className="h-8 w-8" />,
+      slug: "/what-we-do/detailing-polishing",
+    },
+    {
       id: "interior-detailing",
       title: "Interior Detailing",
       description: "Deep cleaning and restoration of your car's interior with professional techniques",
       features: ["Deep vacuum cleaning", "Leather conditioning", "Dashboard restoration", "Odor elimination"],
       image: "/images/interior-detailing.png",
       icon: <Car className="h-8 w-8" />,
+      slug: "/what-we-do/interior-detailing",
     },
     {
       id: "detailing-services",
@@ -29,15 +70,17 @@ export default function WhatWeDoPage() {
       description: "Comprehensive range of specialized car care and detailing services",
       features: ["Glass & windshield care", "Headlight restoration", "Deodorizer treatment", "Leather seat care"],
       image: "/images/detailing-services.png",
-      icon: <Sparkles className="h-8 w-8" />,
+      icon: <Zap className="h-8 w-8" />,
+      slug: "/what-we-do/detailing-services",
     },
     {
-      id: "car-wash-care",
-      title: "Car Wash & Care",
-      description: "Professional wash services to keep your car spotless and protected",
-      features: ["Premium foam wash", "Pressure cleaning", "Wax application", "Protective coating"],
+      id: "automatic-car-wash",
+      title: "Automatic Car Wash and Care",
+      description: "State-of-the-art automatic car wash systems for efficient and thorough cleaning",
+      features: ["Touchless washing", "Premium foam wash", "Spot-free rinse", "Quick drying system"],
       image: "/images/car-wash-care.png",
-      icon: <Shield className="h-8 w-8" />,
+      icon: <Droplets className="h-8 w-8" />,
+      slug: "/what-we-do/automatic-car-wash",
     },
     {
       id: "bike-wash-care",
@@ -46,6 +89,7 @@ export default function WhatWeDoPage() {
       features: ["Engine cleaning", "Chain lubrication", "Body polishing", "Chrome restoration"],
       image: "/images/bike-wash-and-care.png",
       icon: <Bike className="h-8 w-8" />,
+      slug: "/what-we-do/bike-wash-care",
     },
     {
       id: "tyre-care",
@@ -54,14 +98,16 @@ export default function WhatWeDoPage() {
       features: ["Tyre cleaning", "Sidewall protection", "Pressure checking", "Alignment inspection"],
       image: "/images/car-and-bike-tyre.png",
       icon: <Settings className="h-8 w-8" />,
+      slug: "/what-we-do/tyre-care",
     },
     {
       id: "accessories",
       title: "Accessories",
       description: "Premium car care accessories and additional services",
-      features: ["Ceramic coating", "Paint protection film", "Interior accessories", "Performance upgrades"],
+      features: ["Audio systems", "Custom seat covers", "Car garnishing", "Performance upgrades"],
       image: "/images/accessories.png",
       icon: <Wrench className="h-8 w-8" />,
+      slug: "/what-we-do/accessories",
     },
   ]
 
@@ -83,147 +129,125 @@ export default function WhatWeDoPage() {
     },
   ]
 
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Car and Bike Care Services",
-    "provider": {
-      "@type": "Organization",
-      "name": "Ekatra Care",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "postalCode": "560062",
-        "streetAddress": "Sy No.21, Chunchagatta, Yadava Farm",
-      },
-    },
-    "offers": services.map(service => ({
-      "@type": "Offer",
-      "name": service.title,
-      "description": service.description,
-    })),
-  }
-
   return (
-    <>
-      <Head>
-        <title>Premium Car and Bike Care Services in Bengaluru | Ekatra Care</title>
-        <meta
-          name="description"
-          content="Explore Ekatra Care's premium car and bike care services in Bengaluru, including interior detailing, wash, and tyre care. Book your service today!"
-        />
-        <meta name="keywords" content="car care Bengaluru, bike detailing, interior cleaning, premium car wash" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.ekatracare.com/what-we-do" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
-      </Head>
-      <main className="pt-16">
-        <section className="py-20 bg-gradient-to-r from-rose-600 to-red-600 text-white">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">Premium Car and Bike Care Services</h1>
-            <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto animate-slide-up">
-              Comprehensive car and bike care services designed to keep your vehicles in pristine condition
-            </p>
+    <main className="pt-16">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-r from-rose-600 to-red-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">What We Do</h1>
+          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto animate-slide-up">
+            Comprehensive car and bike care services designed to keep your vehicles in pristine condition
+          </p>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 px-4 bg-slate-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h2>
+            <p className="text-xl text-gray-400">Professional car and bike care solutions for every need</p>
           </div>
-        </section>
 
-        <section className="py-20 px-4 bg-slate-900">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h2>
-              <p className="text-xl text-gray-400">Professional car and bike care solutions for every need</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={service.title}
+                className="glass-morphism rounded-3xl p-6 hover:glass-morphism-hover transition-all duration-500 animate-slide-up group hover-lift"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative overflow-hidden rounded-2xl mb-6">
+                  <Image
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 right-4 p-3 glass-morphism rounded-full text-rose-500 animate-pulse-glow">
+                    {service.icon}
+                  </div>
+                </div>
 
-            <div className="space-y-16 lg:space-y-20">
-              {services.map((service, index) => (
-                <div
-                  key={service.title}
-                  id={service.id}
-                  className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
-                    index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                  } pt-16`}
-                >
-                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""} animate-slide-up`}>
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 glass-morphism rounded-full text-rose-500 mr-4">{service.icon}</div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white">{service.title}</h3>
-                    </div>
-                    <p className="text-base sm:text-lg text-gray-400 mb-4 sm:mb-6">{service.description}</p>
-                    <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-center">
-                          <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-rose-500 mr-2 sm:mr-3 flex-shrink-0" />
-                          <span className="text-gray-300 text-sm sm:text-base">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:gradient-text transition-all duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed">{service.description}</p>
+
+                <ul className="space-y-2 mb-6">
+                  {service.features.slice(0, 3).map((feature) => (
+                    <li key={feature} className="flex items-center text-sm">
+                      <CheckCircle className="h-4 w-4 text-rose-500 mr-2 flex-shrink-0" />
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex gap-3">
+                  <Link href={service.slug} className="flex-1">
                     <Button
-                      onClick={handleBookService}
-                      className="gradient-bg hover:scale-105 transition-all duration-300 text-white text-sm sm:text-base"
-                      title={`Book ${service.title} Service`}
+                      variant="outline"
+                      className="w-full border-rose-500 text-rose-500 hover:bg-rose-500 hover:text-white transition-all duration-300"
                     >
-                      Book This Service
+                      Learn More
                     </Button>
-                  </div>
-                  <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""} animate-fade-in`}>
-                    <Image
-                      src={service.image || "/placeholder.svg"}
-                      alt={`${service.title} service in Bengaluru`}
-                      width={600}
-                      height={400}
-                      className="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-lg"
-                    />
-                  </div>
+                  </Link>
+                  <Button
+                    onClick={handleBookService}
+                    className="flex-1 gradient-bg hover:scale-105 transition-all duration-300 text-white"
+                  >
+                    Book Now
+                  </Button>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-20 bg-slate-800">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Why Choose Ekatra Care?</h2>
-              <p className="text-xl text-gray-400">
-                Experience the difference with our premium car and bike care services
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {whyChooseUs.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="text-center glass-morphism rounded-2xl p-8 animate-slide-up hover-lift"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className="flex justify-center mb-4">{item.icon}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-gray-400">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-gradient-to-r from-rose-600 to-red-600 text-white">
-          <div className="max-w-4xl mx-auto text-center px-4">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Experience Premium Care?</h2>
-            <p className="text-xl mb-8 opacity-90">
-              Book your service today and see why thousands of customers trust Ekatra Care
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-slate-800">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Why Choose Ekatra Care?</h2>
+            <p className="text-xl text-gray-400">
+              Experience the difference with our premium car and bike care services
             </p>
-            <Button
-              onClick={handleBookService}
-              size="lg"
-              variant="secondary"
-              className="bg-white text-rose-600 hover:bg-gray-100 px-8"
-              title="Book Your Car Care Service Now"
-            >
-              Book Your Service Now
-            </Button>
           </div>
-        </section>
-      </main>
-    </>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {whyChooseUs.map((item, index) => (
+              <div
+                key={item.title}
+                className="text-center glass-morphism rounded-2xl p-8 animate-slide-up hover-lift"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="flex justify-center mb-4">{item.icon}</div>
+                <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-gray-400">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-rose-600 to-red-600 text-white">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Experience Premium Care?</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Book your service today and see why thousands of customers trust Ekatra Care
+          </p>
+          <Button
+            onClick={handleBookService}
+            size="lg"
+            variant="secondary"
+            className="bg-white text-rose-600 hover:bg-gray-100 px-8"
+          >
+            Book Your Service Now
+          </Button>
+        </div>
+      </section>
+    </main>
   )
 }
