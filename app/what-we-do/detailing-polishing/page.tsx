@@ -422,7 +422,7 @@ export default function DetailingPolishingPage() {
       </section>
 
       {/* Packages Section */}
-      <section className="py-20 bg-slate-800">
+      {/* <section className="py-20 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Correction Packages</h2>
@@ -469,7 +469,7 @@ export default function DetailingPolishingPage() {
             <p>Contact us for a personalized assessment and quote.</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Before/After Comparisons */}
       <section className="py-20 bg-slate-900">

@@ -397,7 +397,7 @@ export default function CeramicCoatingPage() {
       </section>
 
       {/* Packages Section */}
-      <section className="py-20 bg-slate-800">
+      {/* <section className="py-20 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Ceramic Coating Packages</h2>
@@ -444,7 +444,7 @@ export default function CeramicCoatingPage() {
             <p>Contact us for a personalized quote tailored to your vehicle.</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Before/After Section */}
       <section className="py-20 bg-slate-900">

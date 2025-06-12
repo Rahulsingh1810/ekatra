@@ -477,6 +477,7 @@ export default function AutomaticCarWashPage() {
       </section>
 
       {/* Packages Section */}
+      {/* Uncomment this section if you want to include wash packages
       <section className="py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -525,7 +526,7 @@ export default function AutomaticCarWashPage() {
           </div>
         </div>
       </section>
-
+              */}
       {/* Before/After Comparisons */}
       <section className="py-20 bg-slate-800">
         <div className="max-w-7xl mx-auto px-4">

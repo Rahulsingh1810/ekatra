@@ -29,7 +29,7 @@ export function Navbar() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/what-we-do", label: "What We Do" },
-    { href: "/pricing", label: "Pricing" },
+    // { href: "/pricing", label: "Pricing" },
     { href: "/contact", label: "Contact Us" },
   ]
 
