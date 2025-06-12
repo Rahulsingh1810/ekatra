@@ -606,7 +606,7 @@ export default function TyreCarePage() {
       </section> */}
 
       {/* Before/After Comparisons */}
-      <section className="py-20 bg-slate-900">
+      {/* <section className="py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Care Results</h2>
@@ -648,7 +648,7 @@ export default function TyreCarePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
       <section className="py-20 bg-slate-800">
