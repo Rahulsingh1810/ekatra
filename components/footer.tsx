@@ -42,11 +42,11 @@ export function Footer() {
                   What We Do
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">
                   Pricing
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
                   Contact Us
